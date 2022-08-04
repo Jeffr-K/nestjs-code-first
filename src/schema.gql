@@ -1,0 +1,53 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Address {
+  id: Int!
+  street: String!
+  detail: String!
+  zipcode: String!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+scalar Date
+
+type User {
+  id: Int!
+  username: String!
+  password: Int!
+  email: String!
+  createdAt: Date!
+  updatedAt: Date!
+  address: Address!
+}
+
+type Query {
+  user(id: Int!): User!
+  users: User!
+}
+
+type Mutation {
+  create(userCreateInput: UserCreateInput!): User!
+  update(userUpdateInput: UserUpdateInput!): User!
+  delete(userDeleteInput: UserDeleteInput!): User!
+}
+
+input UserCreateInput {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input UserUpdateInput {
+  username: String!
+  password: String!
+  email: String!
+}
+
+input UserDeleteInput {
+  username: String!
+  password: String!
+  email: String!
+}
