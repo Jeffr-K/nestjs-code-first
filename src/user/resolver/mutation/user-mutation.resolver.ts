@@ -4,6 +4,7 @@ import { UserService } from '../../service/user.service';
 import { UserCreateInput } from '../../input/user-create.input';
 import { UserUpdateInput } from '../../input/user-update.input';
 import { UserDeleteInput } from '../../input/user-delete.input';
+import {InsertResult} from 'typeorm';
 
 @Resolver((of) => User)
 export class UserMutationResolver {
@@ -12,9 +13,10 @@ export class UserMutationResolver {
     private userService: UserService,
   ) {}
 
+  // https://github.com/MichalLytek/type-graphql/issues/318
   @Mutation((returns) => User)
-  async create(@Args('userCreateInput') userCreateInput: UserCreateInput): Promise<void> {
-    await this.userService.createUser();
+  async create(@Args('userCreateInput') userCreateInput: UserCreateInput): Promise<any> {
+    return await this.userService.createUser(userCreateInput);
   }
 
   @Mutation((returns) => User)

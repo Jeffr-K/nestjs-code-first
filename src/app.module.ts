@@ -6,8 +6,6 @@ import { UserModule } from './user/user.module';
 import { ApolloServerPluginLandingPageLocalDefault } from 'apollo-server-core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeormConfig } from './config/typeorm/typeorm.config';
-import { User } from './user/models/user.model';
-import { Address } from './user/models/address.model';
 
 @Module({
   imports: [

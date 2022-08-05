@@ -14,13 +14,13 @@ type Address {
 scalar Date
 
 type User {
-  id: Int!
-  username: String!
-  password: Int!
-  email: String!
-  createdAt: Date!
-  updatedAt: Date!
-  address: Address!
+  id: Int
+  username: String
+  password: String
+  email: String
+  createdAt: Date
+  updatedAt: Date
+  address: Address
 }
 
 type Query {

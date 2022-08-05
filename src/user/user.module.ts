@@ -4,6 +4,7 @@ import { AddressService } from './service/address.service';
 import { UserService } from './service/user.service';
 import { UserMutationResolver } from './resolver/mutation/user-mutation.resolver';
 import { UserQueryResolver } from './resolver/query/user-query.resolver';
+import { UserRepository } from './repository/user.repository';
 
 @Module({
   imports: [],
@@ -14,6 +15,7 @@ import { UserQueryResolver } from './resolver/query/user-query.resolver';
     UserQueryResolver,
     UserService,
     AddressService,
+    UserRepository
   ],
 })
 export class UserModule {}
