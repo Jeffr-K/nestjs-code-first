@@ -19,8 +19,8 @@ export class UserService {
 
   async deleteUser(): Promise<void> {}
 
-  async find(id: number): Promise<User> {
-    return new User();
+  async find(id: number): Promise<any> {
+    return await this.userRepository.selecting(id)
   }
 
 }

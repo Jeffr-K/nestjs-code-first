@@ -18,4 +18,11 @@ export class UserRepository extends Repository<User> {
       .where("user.id = :id", { id: 1 })
       .getOne();
   }
+
+  async selecting(id: number) {
+    return await createQueryBuilder("user")
+      .select()
+      .where("user.id = :id", { id: id })
+      .getOne();
+  }
 }
